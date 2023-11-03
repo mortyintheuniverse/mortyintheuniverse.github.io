@@ -3,39 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Nachoneko cube</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+   
 </head>
+
 <body>
-    <header>
-        <h1>John Doe</h1>
-        <p>Web Developer</p>
-    </header>
+    <h1 style="text-align:center">Click to play 0w0</h1>
 
-    <section class="about-me">
-        <h2>About Me</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut commodo massa. Sed varius dolor vel augue scelerisque, eu sagittis odio convallis.</p>
-    </section>
+    <audio id="myAudio">
+        <source src="sound.mp3" type="audio/mp3" autoplay muted>
+        Your browser does not support the audio element.
+      </audio>
+     
+    <script src="https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.js"></script>
+    <script src="https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/js/objects/Reflector.js"></script>
+    <script>
 
-    <section class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>PHP</li>
-        </ul>
-    </section>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: john.doe@example.com</p>
-        <p>Phone: (123) 456-7890</p>
-    </section>
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
 
-    <footer>
-        <p>&copy; 2023 John Doe</p>
-    </footer>
+        // Create a geometry (e.g., a cube)
+        const geometry = new THREE.BoxGeometry();
+        
+        const textureLoader = new THREE.TextureLoader();
+
+        const textures = [
+            textureLoader.load('1.jpg'),
+            textureLoader.load('2.jpg'),
+            textureLoader.load('3.png'),
+            textureLoader.load('4.png'),
+            textureLoader.load('5.png'),
+            textureLoader.load('2.jpg')
+        ];
+        const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
+
+        // Create a mesh using the geometry and materials
+        const cube = new THREE.Mesh(geometry, materials);
+        
+
+        const group = new THREE.Group();
+        group.add(cube);
+        
+        // group.add(plane);
+
+        scene.add(group);
+        
+        // Set the initial position of the camera
+        camera.position.z = 5;
+
+        
+        // Define a function to animate the scene
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate the cube
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.02;
+        
+    
+            // Render the scene
+            renderer.render(scene, camera);
+        }
+        var audio = document.createElement("AUDIO")
+    document.body.appendChild(audio);
+    audio.src = "sound.mp3";
+
+    document.body.addEventListener("click", function () {
+    audio.play()
+})
+
+        // Start the animation loop
+        animate();
+    </script>
+    
 </body>
 </html>
