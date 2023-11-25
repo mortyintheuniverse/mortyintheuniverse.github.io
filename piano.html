@@ -12,17 +12,14 @@
         }
 
         body {
-            background: #0F2027;
+            background: #ebebeb;
             /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+           
 
         }
 
         .piano {
-            height: 100vh;
+            height: 50vh;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -32,7 +29,6 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            font-size: 1.2rem;
             font-weight: bold;
             padding-bottom: 20px;
         }
@@ -42,8 +38,12 @@
             min-width: 60px;
             height: 70%;
             background-color: white;
-            border: 1px solid #ccc;
+            border: 1px solid #535353;
             color: #000;
+            
+          
+            box-shadow:inset 0 1px 0px #fff,inset 0 -1px 0px #fff,inset 1px 0px 0px #fff,inset -1px 0px 0px #fff,0 4px 3px rgba(0,0,0,0.7);
+            border-radius:0 0 3px 3px;
         }
 
         .black {
@@ -52,8 +52,13 @@
             margin-left: -4%;
             margin-right: -4%;
             z-index: 2;
-            background-color: black;
+            background-color: #222;
             color: #fff;
+            border-width:1px 2px 7px;
+            border-style:solid;
+            border-color:#666 #222 #111 #555;
+            box-shadow:inset 0px -1px 2px rgba(255,255,255,0.4),0 2px 3px rgba(0,0,0,0.4);
+            border-radius:0 0 2px 2px;
         }
 
         .white.active {
@@ -69,32 +74,32 @@
 
 <body>
     <div class="piano">
-        <div class="key white" data-note="C">A</div>
-        <div class="key black" data-note="Cs">W</div>
-        <div class="key white" data-note="D">S</div>
-        <div class="key black" data-note="Ds">E</div>
-        <div class="key white" data-note="E">D</div>
+        <div class="key white" data-note="C">C</div>
+        <div class="key black" data-note="Cs">C#</div>
+        <div class="key white" data-note="D">D</div>
+        <div class="key black" data-note="Ds">D#</div>
+        <div class="key white" data-note="E">E</div>
         <div class="key white" data-note="F">F</div>
-        <div class="key black" data-note="Fs">R</div>
+        <div class="key black" data-note="Fs">F#</div>
         <div class="key white" data-note="G">G</div>
-        <div class="key black" data-note="Gs">T</div>
-        <div class="key white" data-note="A">H</div>
-        <div class="key black" data-note="As">Y</div>
-        <div class="key white" data-note="B">J</div>
+        <div class="key black" data-note="Gs">G#</div>
+        <div class="key white" data-note="A">A</div>
+        <div class="key black" data-note="As">A#</div>
+        <div class="key white" data-note="B">B</div>
     </div>
 
-    <audio src="https://nemo0.github.io/js-piano/notes/C4.mp3" id="C"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/Cs4.mp3" id="Cs"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/D4.mp3" id="D"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/Ds4.mp3" id="Ds"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/E4.mp3" id="E"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/F4.mp3" id="F"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/Fs4.mp3" id="Fs"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/G4.mp3" id="G"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/Gs4.mp3" id="Gs"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/A4.mp3" id="A"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/As4.mp3" id="As"></audio>
-    <audio src="https://nemo0.github.io/js-piano/notes/B4.mp3" id="B"></audio>
+    <audio src="notes\C4.mp3" id="C"></audio>
+    <audio src="notes\Cs4.mp3" id="Cs"></audio>
+    <audio src="notes\D4.mp3" id="D"></audio>
+    <audio src="notes\Ds4.mp3" id="Ds"></audio>
+    <audio src="notes\E4.mp3" id="E"></audio>
+    <audio src="notes\F4.mp3" id="F"></audio>
+    <audio src="notes\Fs4.mp3" id="Fs"></audio>
+    <audio src="notes\G4.mp3" id="G"></audio>
+    <audio src="notes\Gs4.mp3" id="Gs"></audio>
+    <audio src="notes\A4.mp3" id="A"></audio>
+    <audio src="notes\As4.mp3" id="As"></audio>
+    <audio src="notes\B4.mp3" id="B"></audio>
 
     <script>
         const keys = document.querySelectorAll('.key');
@@ -122,9 +127,9 @@
             noteSound.currentTime = 0
             noteSound.play()
             key.classList.add('active')
-            noteSound.addEventListener('ended', () => {
-                key.classList.remove('active')
-            })
+            setTimeout(function(){
+            key.classList.remove('active')
+            }, 100);
         }
     </script>
 </body>
