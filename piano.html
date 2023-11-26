@@ -34,8 +34,8 @@
         }
 
         .white {
-            width: 9%;
-            min-width: 60px;
+            width: 7%;
+          
             height: 70%;
             background-color: white;
             border: 1px solid #535353;
@@ -47,10 +47,10 @@
         }
 
         .black {
-            width: 8%;
+            width: 4%;
             height: 45%;
-            margin-left: -4%;
-            margin-right: -4%;
+            margin-left: -2%;
+            margin-right: -2%;
             z-index: 2;
             background-color: #222;
             color: #fff;
@@ -74,39 +74,59 @@
 
 <body>
     <div class="piano">
-        <div class="key white" data-note="C">C</div>
-        <div class="key black" data-note="Cs">C#</div>
-        <div class="key white" data-note="D">D</div>
-        <div class="key black" data-note="Ds">D#</div>
-        <div class="key white" data-note="E">E</div>
-        <div class="key white" data-note="F">F</div>
-        <div class="key black" data-note="Fs">F#</div>
-        <div class="key white" data-note="G">G</div>
-        <div class="key black" data-note="Gs">G#</div>
-        <div class="key white" data-note="A">A</div>
-        <div class="key black" data-note="As">A#</div>
-        <div class="key white" data-note="B">B</div>
+      
+        <div class="key white" data-note="D3">D</div>
+        <div class="key black" data-note="D3s">D#</div>
+        <div class="key white" data-note="E3">E</div>
+        <div class="key white" data-note="F3">F</div>
+        <div class="key black" data-note="F3s">F#</div>
+        <div class="key white" data-note="G3">G</div>
+        <div class="key black" data-note="G3s">G#</div>
+        <div class="key white" data-note="A4">A</div>
+        <div class="key black" data-note="A4s">A#</div>
+        <div class="key white" data-note="B4">B</div>
+        <div class="key white" data-note="C4">C</div>
+        <div class="key black" data-note="C4s">C#</div>
+        <div class="key white" data-note="D4">D</div>
+        <div class="key black" data-note="D4s">D#</div>
+        <div class="key white" data-note="E4">E</div>
+        <div class="key white" data-note="F4">F</div>
+        <div class="key black" data-note="F4s">F#</div>
+        <div class="key white" data-note="G4">G</div>
+        <div class="key black" data-note="G4s">G#</div>
+        <div class="key white" data-note="A5">A</div>
+        <div class="key black" data-note="A5s">A#</div>
+        <div class="key white" data-note="B5">B</div>
     </div>
-
-    <audio src="notes\C4.mp3" id="C" preload="auto"></audio>
-    <audio src="notes\Cs4.mp3" id="Cs" preload="auto"></audio>
-    <audio src="notes\D4.mp3" id="D" preload="auto"></audio>
-    <audio src="notes\Ds4.mp3" id="Ds" preload="auto"></audio>
-    <audio src="notes\E4.mp3" id="E" preload="auto"></audio>
-    <audio src="notes\F4.mp3" id="F" preload="auto"></audio>
-    <audio src="notes\Fs4.mp3" id="Fs"preload="auto"></audio>
-    <audio src="notes\G4.mp3" id="G" preload="auto"></audio>
-    <audio src="notes\Gs4.mp3" id="Gs" preload="auto"></audio>
-    <audio src="notes\A4.mp3" id="A" preload="auto"></audio>
-    <audio src="notes\As4.mp3" id="As" preload="auto"></audio>
-    <audio src="notes\B4.mp3" id="B" preload="auto"></audio>
+    <audio src="notes36\d3.mp3" id="D3" preload="auto"></audio>
+    <audio src="notes36\d-3.mp3" id="D3s" preload="auto"></audio>
+    <audio src="notes36\e3.mp3" id="E3" preload="auto"></audio>
+    <audio src="notes36\f3.mp3" id="F3" preload="auto"></audio>
+    <audio src="notes36\f-3.mp3" id="F3s"preload="auto"></audio>
+    <audio src="notes36\g3.mp3" id="G3" preload="auto"></audio>
+    <audio src="notes36\g-3.mp3" id="G3s" preload="auto"></audio>
+    <audio src="notes36\a4.mp3" id="A4" preload="auto"></audio>
+    <audio src="notes36\a-4.mp3" id="A4s" preload="auto"></audio>
+    <audio src="notes36\b4.mp3" id="B4" preload="auto"></audio>
+    <audio src="notes36\c4.mp3" id="C4" preload="auto"></audio>
+    <audio src="notes36\c-4.mp3" id="C4s" preload="auto"></audio>
+    <audio src="notes36\d4.mp3" id="D4" preload="auto"></audio>
+    <audio src="notes36\d-4.mp3" id="D4s" preload="auto"></audio>
+    <audio src="notes36\e4.mp3" id="E4" preload="auto"></audio>
+    <audio src="notes36\f4.mp3" id="F4" preload="auto"></audio>
+    <audio src="notes36\f-4.mp3" id="F4s"preload="auto"></audio>
+    <audio src="notes36\g4.mp3" id="G4" preload="auto"></audio>
+    <audio src="notes36\g-4.mp3" id="G4s" preload="auto"></audio>
+    <audio src="notes36\a5.mp3" id="A5" preload="auto"></audio>
+    <audio src="notes36\a-5.mp3" id="A5s" preload="auto"></audio>
+    <audio src="notes36\b5.mp3" id="B5" preload="auto"></audio>
 
     <script>
         const keys = document.querySelectorAll('.key');
         const regulars = document.querySelectorAll('.key.white');
         const sharps = document.querySelectorAll('.key.black');
-        const whites = ['a', 's', 'd', 'f', 'g', 'h', 'j'];
-        const blacks = ['w', 'e', 'r', 't', 'y']
+        const whites = ['a', 's', 'd', 'f', 'g', 'h', 'j','k','l',';','\'','\\'];
+        const blacks = ['w',  'r', 't','y', 'i','o', 'p', '[', ']'];
 
         keys.forEach(key => {
             key.addEventListener('click', () => playNote(key))
