@@ -60,7 +60,7 @@ const SubmissionForm = ({ onSubmissionSuccess,submitted }) => {
           value={comments}
           onChange={(e) => setComments(e.target.value)}
           required
-          className='rounded-md'
+          className='rounded-md text-black'
         />
       </div>
       <button type="submit" className='w-24  rounded-sm bg-blue-400'>Submit</button>
