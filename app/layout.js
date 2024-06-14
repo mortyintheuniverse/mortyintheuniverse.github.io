@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en"  suppressHydrationWarning={true}>
-      <head>
+      <head > <link rel="icon" href="https://www.dota2.com/favicon.ico" />
       <body>{children}</body></head>
     </html>
   );
