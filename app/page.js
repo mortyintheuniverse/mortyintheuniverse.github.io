@@ -172,7 +172,7 @@ const handleSubmissionSuccess = (submitted) => {
           <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
             <circle cx={1} cy={1} r={1} />
           </svg>
-          Stop the evil Gaben from corruting the hero !
+          Stop the evil Gaben from corrupting the hero !
         </p>
       <div
         className="absolute left-[max(45rem,calc(50%+8rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
